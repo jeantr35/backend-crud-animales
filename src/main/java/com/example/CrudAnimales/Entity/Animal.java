@@ -1,4 +1,4 @@
-package Entity;
+package com.example.CrudAnimales.Entity;
 
 
 import javax.persistence.*;
