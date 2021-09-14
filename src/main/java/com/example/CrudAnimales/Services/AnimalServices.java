@@ -3,9 +3,11 @@ package com.example.CrudAnimales.Services;
 import com.example.CrudAnimales.Entity.Animal;
 import com.example.CrudAnimales.Repository.InterfaceRepositoryAnimal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AnimalServices implements InterfaceAnimalServices {
 
     @Autowired
