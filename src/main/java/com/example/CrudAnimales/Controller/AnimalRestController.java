@@ -8,8 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 @RestController
 @RequestMapping("/animal")
+@CrossOrigin(origins="http://localhost:3000/")
 public class AnimalRestController {
 
     @Autowired
@@ -32,10 +35,11 @@ public class AnimalRestController {
         return service.save(animal);
     }
 
+
     @DeleteMapping(value = "deleteAnimal/{id}")
     public ResponseEntity deleteAnimal(@PathVariable int id){
         service.delete(id);
-        return new ResponseEntity(HttpStatus.NO_CONTENT);
+        return new ResponseEntity("ok",HttpStatus.NO_CONTENT);
     }
 
     @PutMapping(value = "/updateAnimal/{id}")
