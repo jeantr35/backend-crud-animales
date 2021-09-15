@@ -1,10 +1,9 @@
 package com.example.CrudAnimales.Controller;
 
 import com.example.CrudAnimales.Entity.Animal;
-import com.example.CrudAnimales.Services.AnimalServices;
-
-import com.example.CrudAnimales.Services.InterfaceAnimalServices;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.example.CrudAnimales.Services.InterfaceAnimalServices;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +20,11 @@ public class AnimalRestController {
         return  service.List();
     }
 
+
+    // listar por ID
     @GetMapping(value = "/getAnimal/{id}")
-    public Animal getAnimalById(@PathVariable int id){
-        return service.ListById(id);
+    public ResponseEntity<Animal> listById(@PathVariable int id) throws NotFoundException {
+        return ResponseEntity.status(HttpStatus.OK).body(service.ListById(id));
     }
 
     @PostMapping(value = "/saveAnimal")

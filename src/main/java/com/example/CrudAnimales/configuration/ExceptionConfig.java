@@ -1,7 +1,8 @@
-package com.example.CrudAnimales.Configuration;
+package com.example.CrudAnimales.configuration;
 
-import com.example.CrudAnimales.Configuration.Exception.BadRequestException;
-import javassist.NotFoundException;
+
+import com.example.CrudAnimales.configuration.exception.BadRequestException;
+import com.example.CrudAnimales.configuration.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

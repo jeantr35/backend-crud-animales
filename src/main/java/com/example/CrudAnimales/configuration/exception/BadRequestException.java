@@ -1,4 +1,4 @@
-package com.example.CrudAnimales.Configuration.Exception;
+package com.example.CrudAnimales.configuration.exception;
 
 public class BadRequestException extends RuntimeException{
 
